@@ -63,6 +63,7 @@ void loop() {
     }
     */
     delay(10);
+    //sprawdzenie czy dziala
 }
 /*
 void sterowanie_winda() {

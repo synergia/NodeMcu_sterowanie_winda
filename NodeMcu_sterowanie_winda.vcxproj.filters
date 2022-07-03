@@ -33,5 +33,8 @@
     <ClInclude Include="Sterowanie_Servo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="__vm\.NodeMcu_sterowanie_winda_github.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
