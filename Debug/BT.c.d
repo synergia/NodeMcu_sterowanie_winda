@@ -1,0 +1,20 @@
+C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\BT.c.o: \
+ C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\BT.c \
+ C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\BT.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/Arduino.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/stdlib_noniso.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/binary.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/esp8266_peri.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1/tools/sdk/include/c_types.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/esp8266_undocumented.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1/tools/sdk/include/eagle_soc.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1/tools/sdk/include/spi_flash.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1/tools/sdk/include/spi_flash_geometry.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/twi.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/Arduino.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/core_esp8266_features.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/core_esp8266_version.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/core_version.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/debug.h \
+ C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\variants\nodemcu/pins_arduino.h \
+ c:\users\wojci\appdata\local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\variants\generic\common.h

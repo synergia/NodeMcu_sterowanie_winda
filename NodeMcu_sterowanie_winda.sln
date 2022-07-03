@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NodeMcu_sterowanie_winda", "NodeMcu_sterowanie_winda.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRremote-3.6.1", "..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\IRremote\IRremote-3.6.1.vcxitems", "{36BD3FD0-7D27-4F27-B177-31980CDF0C30}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftwareSerial-6.12.6", "..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\SoftwareSerial\SoftwareSerial-6.12.6.vcxitems", "{88FAFF20-A25E-4A42-998C-287FF92FC0E5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire-1.0", "..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\Wire\Wire-1.0.vcxitems", "{630D5998-8BE7-43C6-9E92-88965FD6DEB7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Adafruit_PWM_Servo_Driver_Library-2.4.0", "..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\Adafruit_PWM_Servo_Driver_Library\Adafruit_PWM_Servo_Driver_Library-2.4.0.vcxitems", "{E8FA058B-A6F1-40AF-8BC5-9CDBA229EC10}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ESP8266WiFi-1.0", "..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\ESP8266WiFi\ESP8266WiFi-1.0.vcxitems", "{3A923E9E-2869-4AEB-A9B1-E27F0C704990}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PubSubClient-2.8", "..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\PubSubClient\PubSubClient-2.8.vcxitems", "{0ECFF4B9-C1F8-44C1-82B0-2785CACFDE16}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\PubSubClient\PubSubClient-2.8.vcxitems*{0ecff4b9-c1f8-44c1-82b0-2785cacfde16}*SharedItemsImports = 9
+		..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\IRremote\IRremote-3.6.1.vcxitems*{36bd3fd0-7d27-4f27-b177-31980cdf0c30}*SharedItemsImports = 9
+		..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\ESP8266WiFi\ESP8266WiFi-1.0.vcxitems*{3a923e9e-2869-4aeb-a9b1-e27f0c704990}*SharedItemsImports = 9
+		..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\Wire\Wire-1.0.vcxitems*{630d5998-8be7-43c6-9e92-88965fd6deb7}*SharedItemsImports = 9
+		..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\SoftwareSerial\SoftwareSerial-6.12.6.vcxitems*{88faff20-a25e-4a42-998c-287ff92fc0e5}*SharedItemsImports = 9
+		..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\ESP8266WiFi\ESP8266WiFi-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\SoftwareSerial\SoftwareSerial-6.12.6.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		..\..\..\..\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\libraries\Wire\Wire-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\Adafruit_PWM_Servo_Driver_Library\Adafruit_PWM_Servo_Driver_Library-2.4.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\IRremote\IRremote-3.6.1.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\PubSubClient\PubSubClient-2.8.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\Adafruit_PWM_Servo_Driver_Library\Adafruit_PWM_Servo_Driver_Library-2.4.0.vcxitems*{e8fa058b-a6f1-40af-8bc5-9cdba229ec10}*SharedItemsImports = 9
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B73E5CF-272E-43D5-800E-3377CD1F802B}
+	EndGlobalSection
+EndGlobal
