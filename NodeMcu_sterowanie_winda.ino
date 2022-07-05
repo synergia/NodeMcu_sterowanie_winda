@@ -29,13 +29,13 @@ void setup() {
 
     //wlaczenie_odbierania();
     //Serial.println("Wlaczenie IR");
-    //pwm.begin();
-   // pwm.setOscillatorFrequency(27000000);
-   // pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
+    pwm.begin();
+    pwm.setOscillatorFrequency(27000000); //PCA9685 chip is a range between about 23-27MHz
+    pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
     //MQTT
-    setup_wifi();
-    client.setServer(mqtt_server, 1883);
-    client.setCallback(callback);
+    //setup_wifi();
+    //client.setServer(mqtt_server, 1883);
+    //client.setCallback(callback);
 
 	pinMode(LED_BUILTIN, OUTPUT);
     pinMode(led, OUTPUT);
@@ -54,7 +54,7 @@ void setup() {
 // the loop function runs over and over again until power down or reset
 void loop() {
     //odczyt_BT();
-    mqtt();
+    //mqtt();
     //odbieranie_sygnalu();
     /*
     if (irrecv.decode(&results)) {
@@ -62,7 +62,10 @@ void loop() {
         irrecv.resume();
     }
     */
-    delay(10);
+    digitalWrite(LED_BUILTIN, HIGH);
+    moveServo(0);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(2000);
     //sprawdzenie czy dziala
 }
 /*

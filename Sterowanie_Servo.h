@@ -1,4 +1,6 @@
 #pragma once
+//skarbnica wiedzy https://diyi0t.com/servo-motor-tutorial-for-arduino-and-esp8266/
+
 
 // called this way, it uses the default address 0x40
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
@@ -19,8 +21,8 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 // our servo # counter
 
-uint8_t servonum = 0;
-uint16_t pulselen = 250;
+uint8_t servonum = 0; //numer serwa
+uint16_t pulselen = 250; //pulselenght
 
 void moveServo(uint8_t servonum) {
     Serial.println("serwo");
@@ -44,4 +46,17 @@ void moveServo(uint8_t servonum) {
     }
     Serial.println("serwo2");
     return;
+}
+void setServoPulse(uint8_t n, double pulse) {
+    double pulselength;
+
+    pulselength = 1000000;   // 1,000,000 us per second
+    pulselength /= SERVO_FREQ;   // Analog servos run at ~60 Hz updates
+    Serial.print(pulselength); Serial.println(" us per period");
+    pulselength /= 4096;  // 12 bits of resolution
+    Serial.print(pulselength); Serial.println(" us per bit");
+    pulse *= 1000000;  // convert input seconds to us
+    pulse /= pulselength;
+    Serial.println(pulse);
+    pwm.setPWM(n, 0, pulse);
 }
