@@ -63,9 +63,10 @@ void loop() {
     }
     */
     digitalWrite(LED_BUILTIN, HIGH);
-    moveServo(0);
+    delay(1000);
+    //moveServo(0);
     digitalWrite(LED_BUILTIN, LOW);
-    delay(2000);
+    delay(1000);
     //sprawdzenie czy dziala
 }
 /*
