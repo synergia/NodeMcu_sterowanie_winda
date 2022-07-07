@@ -1,4 +1,6 @@
 #pragma once
+//https://html.alldatasheet.com/html-pdf/199976/VISHAY/TSOP31138/218/1/TSOP31138.html
+
 //PINy NodeMcu
 #define pin_wysylanie D0
 #define pin_odbieranie D1

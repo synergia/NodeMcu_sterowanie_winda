@@ -26,8 +26,11 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 unsigned long lastMsg = 0;
 #define MSG_BUFFER_SIZE	(50)
+#define ilosc_pieter 10
 char msg[MSG_BUFFER_SIZE];
 int value = 0;
+
+String received_message;
 
 void setup_wifi() {
 
@@ -52,16 +55,130 @@ void setup_wifi() {
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
 }
+void test_mruganie(int ilosc) {
+    int i;
+        for (i = 1; i <= ilosc; i++) {
+            digitalWrite(LED_BUILTIN, LOW);
+            delay(750);
+            digitalWrite(LED_BUILTIN, HIGH);
+            delay(500);
+        }
+}
+void test_take_lift() {
+    
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(1500);
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(1500);
+    
+}
+void sterowanie_winda_MQTT() {
+    int i = -2;
+    int wybor = 0;
 
+    if (received_message == String("take lift")) {
+        test_take_lift();
+        Serial.println("Przywilanie windy");
+    }
+    else {
+        while (i < ilosc_pieter) {
+            if (received_message == String(i)) {
+                //moveServo(i);
+                test_mruganie(i);
+                Serial.println("Wybranie pietra");
+                break;
+            }
+            i++;
+        }
+    }
+    /*
+    while (i < 10) {
+        if (received_message = (char)i) {
+            wybor = i;
+        }
+    }
+
+    switch (wybor)
+    {
+    case 1:
+        Serial.println("Wybranie pietra 1");
+        //tutaj w kazdym funkcja przekodowywania danych
+        //moveServo(0);
+        break;
+    case 2:
+        Serial.println("Wybranie pietra 2");
+        //moveServo(1);
+
+        break;
+    case 3:
+        Serial.println("Wybranie pietra 3");
+
+
+        break;
+    case 4:
+        Serial.println("Wybranie pietra 4");
+
+
+        break;
+    case 5:
+        Serial.println("Wybranie pietra 5");
+
+        break;
+    case 0:
+        Serial.println("Wywolanie windy gora");
+        // wywolanie_windy(sygnal);
+        //moveServo(servonum);
+        break;
+    case wywolanie_windy_dol:
+        Serial.println("Wywolanie windy dol");
+        // wywolanie_windy(sygnal);
+        break;
+
+
+    default:
+        Serial.println("coœ nie pyklo");
+        break;
+    }
+    */
+}
 void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("Message arrived [");
     Serial.print(topic);
     Serial.print("] ");
     for (int i = 0; i < length; i++) {
-        Serial.print((char)payload[i]);
+        //Serial.print((char)payload[i]);
+        received_message += (char)payload[i];
+        Serial.print(received_message[i]);
     }
     Serial.println();
 
+ 
+    if (strcmp(topic, "/B5/lift/check") == 0) {
+        test_mruganie(1);
+        client.publish("/B5/lift/", "ok");
+    }
+    if (strcmp(topic, "/B5/lift/") == 0) {
+        sterowanie_winda_MQTT();
+    }
+    received_message.clear();
+    /*
+    Serial.print("Message arrived [");
+    Serial.print(topic);
+    Serial.print("] ");
+    for (int i = 0; i < length; i++) {
+        received_message += (char)payload[i];
+        Serial.print(received_message[i]);
+    }
+    Serial.println();
+
+    if (topic == "B5/lift/check") {
+        client.publish("B5/lift/check", "ok");
+    }
+    if (topic == "B5/lift") {
+        sterowanie_winda_MQTT();
+    }
+    */
+    /*
     // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
         digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
@@ -77,8 +194,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
         digitalWrite(led, LOW);
         delay(1000);
     }
+    */
 }
-
 void reconnect() {
     // Loop until we're reconnected
     while (!client.connected()) {
@@ -93,6 +210,8 @@ void reconnect() {
             client.publish("outTopic", "hello world");
             // ... and resubscribe
             client.subscribe("inTopic");
+            client.subscribe("/B5/lift/check");
+            client.subscribe("/B5/lift/");
         }
         else {
             Serial.print("failed, rc=");
@@ -100,11 +219,27 @@ void reconnect() {
             Serial.println(" try again in 5 seconds");
             // Wait 5 seconds before retrying
             delay(5000);
+           
         }
     }
 }
-
 void mqtt() {
+    if (!client.connected()) {
+        reconnect();
+    }
+    client.loop();
+
+    unsigned long now = millis();
+    if (now - lastMsg > 2000) {
+        lastMsg = now;
+        ++value;
+        //snprintf(msg, MSG_BUFFER_SIZE, "hello world #%ld", value);
+        //Serial.print("Publish message: ");
+        //Serial.println(msg);
+        //client.publish("outTopic", msg);
+    }
+    
+    /*
     if (!client.connected()) {
         reconnect();
     }
@@ -119,8 +254,12 @@ void mqtt() {
         Serial.println(msg);
         client.publish("outTopic", msg);
     }
+    */
 }
-
+void set_sub_pub_mqtt() {
+    client.subscribe("B5/lift/check");
+    client.subscribe("B5/lift");
+}
 /*
 void setup() {
     pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
