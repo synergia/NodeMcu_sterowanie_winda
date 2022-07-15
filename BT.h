@@ -2,6 +2,7 @@
 #include <SoftwareSerial.h>
 
 boolean NL = false;
+bool status;
 String sygnal_BT;
 SoftwareSerial mySerial(D3, D4); //rx, tx
 char a='z';
@@ -28,12 +29,13 @@ void mySerialEvent() {
 }
 void mruganie()
 {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(200);
     digitalWrite(LED_BUILTIN, LOW);
+    delay(200);
+    digitalWrite(LED_BUILTIN, HIGH);
     delay(50);
+    status = false;
 }
-void odczyt_BT() {
+ICACHE_RAM_ATTR void odczyt_BT() {
     /*
     while (mySerial.available()) {
         Serial.print((char)mySerial.read());
@@ -52,6 +54,7 @@ void odczyt_BT() {
         Serial.println("Otrzymany sygnal:");
         Serial.println(sygnal_BT);
         sygnal_BT.clear();
+        status = true;
     }
 
     //Serial.println("Otrzymany sygnal:");

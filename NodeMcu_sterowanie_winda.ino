@@ -18,9 +18,7 @@
 #include "Sterowanie_Servo.h"
 
 
-const int RECV_PIN = D0;
-IRrecv irrecv(RECV_PIN);
-decode_results results;
+
 // the setup function runs once when you press reset or power the board
 void setup() {
 	Serial.begin(115200);
@@ -29,6 +27,9 @@ void setup() {
 
 	pinMode(LED_BUILTIN, OUTPUT);
     pinMode(led, OUTPUT);
+
+    //pinMode(D3, INPUT_PULLUP);
+    //attachInterrupt(digitalPinToInterrupt(D3), odczyt_BT, RISING);
    // irrecv.enableIRIn();
     //irrecv.blink13(true);
 
@@ -42,18 +43,19 @@ void setup() {
    // pwm.setOscillatorFrequency(27000000); //PCA9685 chip is a range between about 23-27MHz
    // pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
     //MQTT
-    setup_wifi();
-    client.setServer(mqtt_server, 1883);
-    client.setCallback(callback);
+    //setup_wifi();
+    //client.setServer(mqtt_server, 1883);
+   // client.setCallback(callback);
     //set_sub_pub_mqtt();
 
 }
 
 // the loop function runs over and over again until power down or reset
 void loop(){
-    //odczyt_BT();
-    mqtt();
+    odczyt_BT();
+    //mqtt();
     //odbieranie_sygnalu();
+    if (status) mruganie();
     /*
     if (irrecv.decode(&results)) {
         Serial.println(results.value, HEX);
