@@ -10,7 +10,8 @@
 #include <SoftwareSerial.h>
 #include <IRremote.hpp>
 
-#define led D1
+//#define led D1
+volatile bool status = false;
 
 #include "BT.h"
 #include "IR.h"
@@ -22,23 +23,12 @@
 // the setup function runs once when you press reset or power the board
 void setup() {
 	Serial.begin(115200);
-    
-    mySerial.begin(38400); //BT
-
+    setup_BT();
+    setup_IR();
 	pinMode(LED_BUILTIN, OUTPUT);
-    pinMode(led, OUTPUT);
-
-    //pinMode(D3, INPUT_PULLUP);
-    //attachInterrupt(digitalPinToInterrupt(D3), odczyt_BT, RISING);
-   // irrecv.enableIRIn();
-    //irrecv.blink13(true);
-
     delay(100);
     Serial.println("Rozpoczecie programu");
     
-
-    //wlaczenie_odbierania();
-    //Serial.println("Wlaczenie IR");
    // pwm.begin();
    // pwm.setOscillatorFrequency(27000000); //PCA9685 chip is a range between about 23-27MHz
    // pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
@@ -52,62 +42,13 @@ void setup() {
 
 // the loop function runs over and over again until power down or reset
 void loop(){
-    odczyt_BT();
-    //mqtt();
-    //odbieranie_sygnalu();
-    if (status) mruganie();
-    /*
-    if (irrecv.decode(&results)) {
-        Serial.println(results.value, HEX);
-        irrecv.resume();
-    }
-    */
-   
-    //sprawdzenie czy dziala
-}
-/*
-void sterowanie_winda() {
-
-    switch (sygnal_IR.value)
-    {
-    case pietro_1:
-        Serial.println("Wybranie pietra 1");
-        //tutaj w kazdym funkcja przekodowywania danych
-        //moveServo(0);
-        break;
-    case pietro_2:
-        Serial.println("Wybranie pietra 2");
-        //moveServo(1);
-
-        break;
-    case pietro_3:
-        Serial.println("Wybranie pietra 3");
-
-
-        break;
-    case pietro_4:
-        Serial.println("Wybranie pietra 4");
-
-
-        break;
-    case pietro_5:
-        Serial.println("Wybranie pietra 5");
-
-        break;
-    case wywolanie_windy_gora:
-        Serial.println("Wywolanie windy gora");
-        // wywolanie_windy(sygnal);
-        //moveServo(servonum);
-        break;
-    case wywolanie_windy_dol:
-        Serial.println("Wywolanie windy dol");
-        // wywolanie_windy(sygnal);
-        break;
-
-
-    default:
-        Serial.println("coœ nie pyklo");
-        break;
+    
+    sprawdzanie_bufora_BT();
+    if (status) {
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(500);
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(200);
+        status = false;
     }
 }
-*/
