@@ -45,7 +45,9 @@ void setup_wifi() {
 
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
-        Serial.println(".");
+        Serial.print(".");
+
+        sprawdzanie_bufora_BT();
     }
 
     randomSeed(micros());
@@ -76,7 +78,7 @@ void sterowanie_winda_MQTT() {
     int i = -2;
     int wybor = 0;
 
-    if (received_message == String("take lift")) {
+    if (received_message == String("call")) {
         test_take_lift();
         Serial.println("Przywilanie windy");
     }
@@ -153,11 +155,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.println();
 
  
-    if (strcmp(topic, "/B5/lift/check") == 0) {
-        test_mruganie(1);
+    if (strcmp(topic, "/lift/status") == 0) {
+        Serial.println("Sprawdzenie statusu polaczenia MQTT");
+        BTSerial.write("Sprawdzenie statusu polaczenia MQTT");
         client.publish("/B5/lift/", "ok");
     }
-    if (strcmp(topic, "/B5/lift/") == 0) {
+    if (strcmp(topic, "/lift/floor0") == 0) {
         sterowanie_winda_MQTT();
     }
     received_message.clear();
@@ -210,8 +213,8 @@ void reconnect() {
             client.publish("outTopic", "hello world");
             // ... and resubscribe
             client.subscribe("inTopic");
-            client.subscribe("/B5/lift/check");
-            client.subscribe("/B5/lift/");
+            client.subscribe("/lift/status");
+            client.subscribe("/lift/floor0");
         }
         else {
             Serial.print("failed, rc=");
@@ -223,6 +226,7 @@ void reconnect() {
         }
     }
 }
+/*
 void mqtt() {
     if (!client.connected()) {
         reconnect();
@@ -254,12 +258,9 @@ void mqtt() {
         Serial.println(msg);
         client.publish("outTopic", msg);
     }
-    */
+    
 }
-void set_sub_pub_mqtt() {
-    client.subscribe("B5/lift/check");
-    client.subscribe("B5/lift");
-}
+*/
 /*
 void setup() {
     pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output

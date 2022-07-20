@@ -33,9 +33,9 @@ void setup() {
    // pwm.setOscillatorFrequency(27000000); //PCA9685 chip is a range between about 23-27MHz
    // pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
     //MQTT
-    //setup_wifi();
-    //client.setServer(mqtt_server, 1883);
-   // client.setCallback(callback);
+    setup_wifi();
+    client.setServer(mqtt_server, 1883);
+    client.setCallback(callback);
     //set_sub_pub_mqtt();
 
 }
