@@ -79,13 +79,14 @@ void sterowanie_winda_MQTT() {
     int wybor = 0;
 
     if (received_message == String("call")) {
-        test_take_lift();
+       // test_take_lift();
+        moveServo(przywolanie_dol_serwo);
         Serial.println("Przywilanie windy");
     }
     else {
         while (i < ilosc_pieter) {
             if (received_message == String(i)) {
-                //moveServo(i);
+                moveServo(i+2);
                 test_mruganie(i);
                 Serial.println("Wybranie pietra");
                 break;

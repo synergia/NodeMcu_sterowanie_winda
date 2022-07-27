@@ -46,6 +46,7 @@ C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_node
  C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/debug.h \
  C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\variants\nodemcu/pins_arduino.h \
  c:\users\wojci\appdata\local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\variants\generic\common.h \
+ c:\program\ files\microsoft\ visual\ studio\2022\community\common7\ide\extensions\zmlem5y1.jwd\Micro\ Platforms\default\debuggers\VM_DBG/VM_DBG.h \
  C:\Users\wojci\OneDrive\Dokumenty\Arduino\libraries\PubSubClient\src/PubSubClient.h \
  C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/IPAddress.h \
  C:\Users\wojci\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\3.0.1\cores\esp8266/Printable.h \
@@ -155,7 +156,7 @@ C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_node
  C:\Users\wojci\OneDrive\Dokumenty\Arduino\libraries\IRremote\src/ir_Whynter.hpp \
  C:\Users\wojci\OneDrive\Dokumenty\Arduino\libraries\IRremote\src/ir_Pronto.hpp \
  C:\Users\wojci\OneDrive\Dokumenty\Arduino\libraries\IRremote\src/ir_Dish.hpp \
+ C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\Sterowanie_Servo.h \
  C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\BT.h \
  C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\IR.h \
- C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\MQTT.h \
- C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\Sterowanie_Servo.h
+ C:\Users\wojci\AppData\Local\Temp\VMBuilds\NodeMcu_sterowanie_winda\esp8266_nodemcuv2\Debug\MQTT.h

@@ -13,10 +13,11 @@
 //#define led D1
 volatile bool status = false;
 
+#include "Sterowanie_Servo.h"
 #include "BT.h"
 #include "IR.h"
 #include "MQTT.h"
-#include "Sterowanie_Servo.h"
+
 
 
 
@@ -29,9 +30,14 @@ void setup() {
     delay(100);
     Serial.println("Rozpoczecie programu");
     
-   // pwm.begin();
-   // pwm.setOscillatorFrequency(27000000); //PCA9685 chip is a range between about 23-27MHz
-   // pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
+    pwm.begin();
+    pwm.setOscillatorFrequency(27000000); //PCA9685 chip is a range between about 23-27MHz
+    pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
+
+    int i;
+    for (i = 0; i < 10; i++) {
+        moveServo(0);
+    }
     //MQTT
     setup_wifi();
     client.setServer(mqtt_server, 1883);

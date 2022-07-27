@@ -1,5 +1,13 @@
 #pragma once
 //skarbnica wiedzy https://diyi0t.com/servo-motor-tutorial-for-arduino-and-esp8266/
+#define przywolanie_dol_serwo 0
+#define przywolanie_gora_serwo 1
+#define parter_serwo 2
+#define pietro1_serwo 3
+#define pietro2_serwo 4
+#define pietro3_serwo 5
+
+
 
 
 // called this way, it uses the default address 0x40
